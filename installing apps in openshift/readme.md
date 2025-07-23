@@ -1,4 +1,4 @@
-# How to insatll nextcloud on the CTS openshift cluster
+# How to insatll nextcloud on openshift cluster
 ### importent note: this artical refres to nextcloud, but is true for other apps as well.
 
 
@@ -43,8 +43,8 @@ spec:
 to read more about service account's & Security Context Constraint:
 https://developer.ibm.com/learningpaths/secure-context-constraints-openshift/
 *** ****
-**the problem in CTS:**
-in the CTS cluster we don't have an admin Permission.
+**the problem in a restricte:**
+in a restricte cluster we don't have an admin Permission.
 due to that fact - we can't use a service account diffrent then the default.
 any container you will run in the cluster, will run as the UID that's asingnd to it by openshift, with no way to change it.
 becuse of that, the container will allwase run into permitions problems, becuse the container trys to read / write / execute files that he dosen't own.

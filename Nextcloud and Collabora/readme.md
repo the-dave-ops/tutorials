@@ -1,14 +1,5 @@
 # How to Connect Nextcloud and Collabora
 
-> related articales:
-how to build a **nexcloud** image for CTS:
-https://wiki.linnovate.net/en/marketpalce/nextcloud-on-CTS
-how to build a **collabora** image for CTS:
-https://wiki.linnovate.net/en/marketpalce/Collabora-sever-on-CTS
-how to install nextcloud **apps** on the CTS 
-https://wiki.linnovate.net/e/en/marketpalce/nextcloud-Plugins-in-The-CTS
-
-
 
 This article guides you through the process of connecting two separate containers: 1. Nextcloud  2. Collabora. 
 It explains how to set up a connection between the two, allowing Nextcloud to open and edit documents using the Collabora online document editor.
@@ -20,7 +11,7 @@ It explains how to set up a connection between the two, allowing Nextcloud to op
 > Note: While it's possible to install Collabora Code as a plugin within Nextcloud itself (using the **"Collabora Online - Built-in CODE Server"** app available at [https://apps.nextcloud.com/apps/richdocumentscode](https://apps.nextcloud.com/apps/richdocumentscode)), this is not recommended for production environments. This article focuses on an independent installation of Collabora, followed by connecting it to Nextcloud.
 
 # Nextcloud
-> for installing **nextcloud** on the CTS, you will need to use a spechile image that wase rebild whit a uniq UID. for more infomation on this, see this guide: *[linnovate wiki link]*
+> for installing **nextcloud** on the air-gapped openshift cluster, you will need to use a spechile image that wase rebild whit a uniq UID. for more infomation on this, see this guide: *[linnovate wiki link]*
 To configure Nextcloud to work with Collabora, follow these steps:
 1. connect to nextcloud with the admin user.
 2.  In Nextcloud, navigate to the "Apps" section and install the "Nextcloud Office" app. You can manually download the app and copy its files to the apps directory in Nextcloud. The app can be downloaded from: [https://apps.nextcloud.com/apps/richdocuments](https://apps.nextcloud.com/apps/richdocuments)
@@ -40,7 +31,7 @@ To configure Nextcloud to work with Collabora, follow these steps:
 To allow incoming traffic from Nextcloud and establish the connection, follow these steps:
 
 1.  Install and configure Collabora on a separate server or container. 
-> for installing **Collabora** on the CTS, (and for more general infomation on the collabora instaltion as well)  you will need to follow this guide: *[linnovate wiki link]*
+> for installing **Collabora** on a air-gapped openshift cluster, (and for more general infomation on the collabora instaltion as well)  you will need to follow this guide: *[linnovate wiki link]*
     
 2. to allow incoming trafic from nextcloud, add this variable to the collabora installation:
 

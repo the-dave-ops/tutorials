@@ -1,9 +1,7 @@
-  # Collabora server on CTS
+  # Collabora server on OpenShift
 
-  to deploy a collabora server image in the openshift cluster in th CTS, you need to rebuild the collabora image with the UID that suites the UID range of the project.
+  to deploy a collabora server image in the openshift cluster in a restrict cluster, you need to rebuild the collabora image with the UID that suites the UID range of the project.
 
-  [ read about this in depth hear:
-  https://wiki.linnovate.net/en/marketpalce/nextcloud-on-CTS]]
 
   this is the dockerfile you need to use to build the image
   > note: it could be that some of the commands are not needed, but this docker file works fine!

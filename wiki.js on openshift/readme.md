@@ -1,5 +1,5 @@
-# Deploying wiki.js on CTS
-When deploying applications on the CTS Openshift cluster, there is a significant challenge that we don't encounter in the "outside" environment: the inability to run containers as the root user. This limitation presents two main problems:
+# Deploying wiki.js on OpenShift
+When deploying applications on a security resticte Openshift cluster, there is a significant challenge that we don't encounter in the "outside" environment: the inability to run containers as the root user. This limitation presents two main problems:
 
 1.  Binding port 80 to your application becomes impossible, as only root users have the necessary permissions to do so. Consequently, if your application is designed to expose port 80, the deployment will fail with an error message stating "permission denied" when attempting to bind the port.
     
@@ -9,8 +9,6 @@ When deploying applications on the CTS Openshift cluster, there is a significant
     
 Now, let's move on to the solution to these challenges.
 
-for additional info - go to: 
-https://wiki.linnovate.net/en/clients/Getmap/InstallGetmapOnCTS
 
 ## Step 1: download the language files
 Follow the steps in this article:
@@ -142,7 +140,7 @@ by now you will have these files in the same directory:
 
 if you have all of this files - you are redey for the build stage:
 ```
-docker build -t wikijs-cts:1 .
+docker build -t wikijs-openshift:1 .
 ```
 
 ## Step 7: deployment configuration

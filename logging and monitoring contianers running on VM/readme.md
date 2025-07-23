@@ -200,11 +200,13 @@ services:
 ```
 # PART 2: configure grafana
 ## Step 1: add Loki as data source:
-text
+To be continued...
 
 ## Step 2: add Prometheus as data source:
-text
+To be continued...
+
 
 ## Step 3: add Loki as data source:
-text
+To be continued...
+
 

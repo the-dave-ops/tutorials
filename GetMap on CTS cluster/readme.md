@@ -1,7 +1,7 @@
 
-# How to deploy GetMap on CTS cluster
+# How to deploy GetMap on Air-gapped openshift cluster
 
-When deploying applications on the CTS Openshift cluster, there is a significant challenge that we don't encounter in the "outside" environment: the inability to run containers as the root user. This limitation presents two main problems:
+When deploying applications on the openshift cluster, there is a significant challenge that we don't encounter in the "outside" environment: the inability to run containers as the root user. This limitation presents two main problems:
 
 1.  Binding port 80 to your application becomes impossible, as only root users have the necessary permissions to do so. Consequently, if your application is designed to expose port 80, the deployment will fail with an error message stating "permission denied" when attempting to bind the port.
     
@@ -53,8 +53,8 @@ spec:
 to read more about service account's & Security Context Constraint:
 https://developer.ibm.com/learningpaths/secure-context-constraints-openshift/
 *** ****
-**the problem in CTS:**
-in the CTS cluster we don't have an admin Permission.
+**the problem in Air-gapped openshift:**
+in the Air-gapped openshift cluster we don't have an admin Permission.
 due to that fact - we can't use a service account diffrent then the default.
 any container you will run in the cluster, will run as the UID that's asingnd to it by openshift, with no way to change it.
 becuse of that, the container will allwase run into permitions problems, becuse the container trys to read / write / execute files that he dosen't own.
@@ -196,5 +196,3 @@ RUN chown -R postgis:postgis /var/lib/postgresql-data/
 > After building the images "outside", you need to save them as a tar file with `docker save` and then put them on a disk on key, and go to the Halbana computer.
 
 **Importent update:** using the postgis image as a data base is not best practice, not even in a none prod environment.
-The correct approach to connect to a PostGIS database is using the "portal" data base:
-in the CTS go to "portal" and open a postgers database. you will need to open a ticket and ask to add the GIS extention to this data base. 
